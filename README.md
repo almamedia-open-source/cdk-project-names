@@ -80,6 +80,10 @@ _Breaking changes may occur at any given time without prior warning before first
 
 2. Define your resource names:
     ```ts
+    import { Name, UrlName } from '@almamedia-open-source/cdk-resource-name';
+
+    // somewhere inside your CDK stack:
+
     new dynamodb.Table(this, "Table", {
       queueName: Name.it(this, "MyTable"),// "FeatureFooBarMyTable"
     });
@@ -123,9 +127,21 @@ _Breaking changes may occur at any given time without prior warning before first
 There are three different “specificity levels” of naming you may choose via available methods:
 |  Method name  |          Purpose          |   Example with application `environment` info    |
 | :------------ | :------------------------ | :------------------ |
-| `it`          | Default naming convention | `StagingMyResource` |
-| `withProject` | Prefix with project name | `MyCoolProjectStagingMyResource` |
-| `globally`    | Prefix with organization & project name | `AcmeCorpMyCoolProjectStagingMyResource` |
+| `it`          | Only base name with environment type if that is available | `StagingMyResource` |
+| `withProject` | Same as above, but prefix with project name (recommended default) | `MyCoolProjectStagingMyResource` |
+| `globally`    | Same as above, but prefix with organization as well | `AcmeCorpMyCoolProjectStagingMyResource` |
+
+#### Shorthand syntax
+
+Since `withProject` is often the most sensible default, this tool exposes the following shorthand functions for brevity:
+- `name` – same as `Name.withProject`
+- `urlName` – same as `UrlName.withProject`
+
+Note the lowercase first letter.
+
+```ts
+import { name, urlName } from '@almamedia-open-source/cdk-resource-name';
+```
 
 ### Prefixes
 
