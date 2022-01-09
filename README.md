@@ -80,7 +80,7 @@ _Breaking changes may occur at any given time without prior warning before first
 
 2. Define your resource names:
     ```ts
-    import { Name, UrlName } from '@almamedia-open-source/cdk-resource-name';
+    import { Name, UrlName, PathName } from '@almamedia-open-source/cdk-resource-name';
 
     // somewhere inside your CDK stack:
 
