@@ -84,16 +84,22 @@ _Breaking changes may occur at any given time without prior warning before first
 
     // somewhere inside your CDK stack:
 
-    new dynamodb.Table(this, "Table", {
-      queueName: Name.it(this, "MyTable"),// "FeatureFooBarMyTable"
+    new dynamodb.Table(this, 'Table', {
+      queueName: Name.it(this, 'MyTable'),
     });
 
-    new events.EventBus(this, "EventBus", {
-      topicName: Name.withProject(this, "MyEventBus"),// "MyCoolProjectFeatureFooBarMyEventBus"
+    new events.EventBus(this, 'EventBus', {
+      topicName: Name.withProject(this, 'MyEventBus'),
     });
 
-    new s3.Bucket(this, "Bucket", {
-      bucketName: UrlName.globally(this, "MyBucket"), // "acme-corp-my-cool-project-feature-foo-bar-my-bucket"
+    new s3.Bucket(this, 'Bucket', {
+      bucketName: UrlName.globally(this, 'MyBucket'),
+    });
+
+    new ssm.StringParameter(this, 'Parameter', {
+      parameterName: PathName.withProject(this, 'MyNamespace/MyParameter'),
+      stringValue: 'Foo',
+      tier: ssm.ParameterTier.ADVANCED,
     });
     ```
 
@@ -103,11 +109,12 @@ _Breaking changes may occur at any given time without prior warning before first
     ```
 
 4. The resources will be named as following:
-    | Resource | Resource Name |
-    | :------- | :------------ |
-    | Table    | `FeatureFooBarMyTable` |
-    | EventBus | `MyCoolProjectFeatureFooBarMyEventBus` |
-    | Bucket   | `acme-corp-my-cool-project-feature-foo-bar-my-bucket` |
+    | Resource  |                     Resource Name                     |
+    | :-------- | :---------------------------------------------------- |
+    | Table     | `FeatureFooBarMyTable`                                |
+    | EventBus  | `MyCoolProjectFeatureFooBarMyEventBus`                |
+    | Bucket    | `acme-corp-my-cool-project-feature-foo-bar-my-bucket` |
+    | Parameter | `MyCoolProject/FeatureFooBar/MyNamespace/MyParameter` |
 
 <br/>
 
@@ -116,11 +123,11 @@ _Breaking changes may occur at any given time without prior warning before first
 
 ### Case Styles
 
-| Class name |    Style     |                     Purpose                      | Example output |
-| :--------- | :----------- | :----------------------------------------------- | :------------- |
-| `Name`     | `PascalCase` | Default style for naming resources               | `MyResource`   |
-| `UrlName`  | `param-case` | URL/DNS compatible values (e.g. S3 `bucketName`) | `my-resource`  |
-
+| Class name |                Style                |                              Purpose                               |      Example output       |
+| :--------- | :---------------------------------- | :----------------------------------------------------------------- | :------------------------ |
+| `Name`     | `PascalCase`                        | Default style for naming resources                                 | `MyResource`              |
+| `UrlName`  | `param-case`                        | URL/DNS compatible values (e.g. S3 `bucketName`)                   | `my-resource`             |
+| `PathName` | `PascalCase` separated by slash `/` | Slash separated values (e.g. SSM `parameterName` with hierarchies) | `MyNamespace/MyParameter` |
 
 ### Specificity Levels
 
@@ -136,11 +143,12 @@ There are three different “specificity levels” of naming you may choose via 
 Since `withProject` is often the most sensible default, this tool exposes the following shorthand functions for brevity:
 - `name` – same as `Name.withProject`
 - `urlName` – same as `UrlName.withProject`
+- `pathName` – same as `PathName.withProject`
 
 Note the lowercase first letter.
 
 ```ts
-import { name, urlName } from '@almamedia-open-source/cdk-resource-name';
+import { name, urlName, pathName } from '@almamedia-open-source/cdk-resource-name';
 ```
 
 ### Prefixes
@@ -166,7 +174,13 @@ Values in square brackets `[]` are optional and they are printed depending on wh
 
 <br/>
 
-## Resource Name Length Limitations
+## Resource Name Limitations
+
+### Allowed Characters
+
+This tool does not validate for allowed characters, as they vary from service to service. Mostly you should stick to basic alphanumeric characters (`a-z` and `0-9`), with the exception of `PathName` class and it's methods where you may use slash `/` character to describe SSM Parameter name hierarchies.
+
+### Length
 
 **Most AWS resources have resource name length limiation of around 63 characters** but as always, there are exceptions such as:
 - AWS Lambda supports [up to 140 characters for `functionName`](https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html#API_CreateFunction_RequestSyntax)
@@ -177,7 +191,11 @@ The various limitations can be found via service specific API docs or somewhat n
 
 If you have lenghty values in organization name, project name, environment type and/or base name you may run into problems. Due to that reason **by default this utility will create an error if your resource name exceeds 63 characters.**
 
-### Strategies
+#### PathName exception
+
+The exception is `PathName` as it is mostly used with AWS Systems Manager Parameter Store Paremeters, which have the [ARN length limit of `1011`](https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PutParameter.html#systemsmanager-PutParameter-request-Name): Therefore with `PathName` we have decided to set the default character limit to `900`. You can always configure that with `maxLength: number` property.
+
+#### Strategies
 
 1. If the resource accepts longer resource names (like AWS Lambda accepts 140 characters for `functionName`), you may specify a custom max length as a prop:
     ```ts
@@ -203,7 +221,7 @@ If you have lenghty values in organization name, project name, environment type 
 
 7. Roll your own naming for that specific resource. You may want to utilize some of the methods provided by [`@almamedia-open-source/cdk-project-context`](https://github.com/almamedia-open-source/cdk-project-context).
 
-### Trimming
+#### Trimming
 
 Set the maximum length and enable trimming:
 ```ts
