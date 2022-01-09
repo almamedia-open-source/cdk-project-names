@@ -109,12 +109,12 @@ _Breaking changes may occur at any given time without prior warning before first
     ```
 
 4. The resources will be named as following:
-    | Resource  |                     Resource Name                     |
-    | :-------- | :---------------------------------------------------- |
-    | Table     | `FeatureFooBarMyTable`                                |
-    | EventBus  | `MyCoolProjectFeatureFooBarMyEventBus`                |
-    | Bucket    | `acme-corp-my-cool-project-feature-foo-bar-my-bucket` |
-    | Parameter | `MyCoolProject/FeatureFooBar/MyNamespace/MyParameter` |
+    | Resource  |                     Resource Name                      |
+    | :-------- | :----------------------------------------------------- |
+    | Table     | `FeatureFooBarMyTable`                                 |
+    | EventBus  | `MyCoolProjectFeatureFooBarMyEventBus`                 |
+    | Bucket    | `acme-corp-my-cool-project-feature-foo-bar-my-bucket`  |
+    | Parameter | `/MyCoolProject/FeatureFooBar/MyNamespace/MyParameter` |
 
 <br/>
 
@@ -127,7 +127,7 @@ _Breaking changes may occur at any given time without prior warning before first
 | :--------- | :---------------------------------- | :----------------------------------------------------------------- | :------------------------ |
 | `Name`     | `PascalCase`                        | Default style for naming resources                                 | `MyResource`              |
 | `UrlName`  | `param-case`                        | URL/DNS compatible values<br/>(e.g. S3 `bucketName`)                   | `my-resource`             |
-| `PathName` | `PascalCase`<br/>separated by<br/>`/` (slash) | Slash separated values<br/>(e.g. SSM `parameterName` with hierarchies) | `MyNamespace/MyParameter` |
+| `PathName` | `PascalCase`<br/>separated by<br/>`/` (slash) | Slash separated values<br/>(e.g. SSM `parameterName` with hierarchies) | `/MyNamespace/MyParameter` |
 
 ### Specificity Levels
 

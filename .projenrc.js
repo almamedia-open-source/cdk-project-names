@@ -23,8 +23,8 @@ const project = new AwsCdkConstructLibrary({
   cdkVersion: '2.0.0',
   constructsVersion: '10.0.0',
   peerDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context'],
-  devDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context'],
-  //deps: ['@almamedia-open-source/cdk-project-context'],
+  devDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context', '@types/change-case'],
+  bundledDeps: ['change-case'],
 
   // Gitignore
   gitignore: ['.DS_Store'],
