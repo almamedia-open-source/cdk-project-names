@@ -129,7 +129,7 @@ There are three different “specificity levels” of naming you may choose via 
 | :------------ | :------------------------ | :------------------ |
 | `it`          | Only base name with environment type if that is available | `StagingMyResource` |
 | `withProject` | Same as above, but prefix with project name (recommended default) | `MyCoolProjectStagingMyResource` |
-| `globally`    | Same as above, but prefix with organization as well | `AcmeCorpMyCoolProjectStagingMyResource` |
+| `globally`    | Same as above, but prefix with your organization name as well | `AcmeCorpMyCoolProjectStagingMyResource` |
 
 #### Shorthand syntax
 
