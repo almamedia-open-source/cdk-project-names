@@ -12,7 +12,7 @@
 2. prevent accidental/unwanted replacement operations
 3. make debugging and finding correct resources via CloudWatch or X-Ray easier
 
-There are many valid arguments why you should aim for totally immutable infrastructure and use generated resource names. But for example, how often you want to [change DynamoDB partition key on the fly](https://bobbyhadz.com/blog/dont-assign-names-cdk-resources) for production database with existing data? You might also have a lot of resources that others (even in different AWS accounts) rely on and hence the name (or ARN) of those resources must not change suddenly! **In the end, how you name (or don't name) your resources is up to you to decide; If you decide to explicitly name (all or some) resources, this utility might be for you!**
+There are many valid arguments why you should aim for totally immutable infrastructure and use generated resource names. But for example, how often you want to [change DynamoDB partition key on the fly](https://bobbyhadz.com/blog/dont-assign-names-cdk-resources) for production database with existing data? You might also have a lot of resources that others (even in different AWS accounts) rely on and hence the name (or ARN) of those resources must not change suddenly! **In the end, how you name (or don't name) your resources is up to you to decide; If you decide to explicitly name (_all or some_) resources, this utility might be for you!**
 
 <br/>
 
@@ -147,3 +147,71 @@ Depending on the configuration, CDK context and method that is being used, this 
  `param-case` URL/DNS compatible | `[organization-][project-name-]basename` |  `[organization-][project-name-]environment-basename` |
 
 Values in square brackets (`[]`) are optional and they are printed depending on which [specificity level is used](#specificity-levels).
+
+<br/>
+
+## Resource Name Length Limitations
+
+**Most AWS resources have resource name length limiation of around 63 characters** but as always, there are exceptions such as:
+- AWS Lambda supports [up to 140 characters for `functionName`](https://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html#API_CreateFunction_RequestSyntax)
+- ElastiCache supports [only 50 characters for `clusterName`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername)
+- Elastic Load Balancing supports [only 32 characters for `targetGroupName`](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html)
+
+The various limitations can be found via service specific API docs or somewhat nicely [aggregated for most popular services in this StackOverflow answer](https://stackoverflow.com/a/46290196/11266464).
+
+If you have lenghty values in organization name, project name, environment type and/or base name you may run into problems. Due to that reason **by default this utility will create an error if your resource name exceeds 63 characters.**
+
+### Strategies
+
+1. If the resource accepts longer resource names (like AWS Lambda accepts 140 characters for `functionName`), you may specify a custom max length as a prop:
+    ```ts
+    Name.globally(this, 'MyFunction', { maxLength: 140 });
+    ```
+2. Select the naming method carefully:
+
+    - If your AWS account only has single project in it, you should default to using `it` which results into shortest possible resource name, for example `StagingMyResource`. But also consider future-proofing: Will there be other projects in that AWS account in the future?
+
+    - If your AWS account has multiple projects (e.g. microservices) in it, you should default to using `withProject`, which results into values such as `MyCoolProjectStagingMyResource`.
+
+    - Only use `globally` method which prints the longest form (for example `AcmeCorpMyCoolProjectStagingMyResource`) for things such as S3 bucket names.
+
+      You shouldn't really have the need to separate different organizations internally within a single AWS account. Having multiple organizations (business units or development teams etc) deploying workloads into the same AWS account suggests your AWS account organization setup is not necessarily following best practises.
+
+3. **If the name is not important to you: Don't specify the name at all and let CDK handle it!**
+
+4. Consider shorter base name.
+
+5. You should consider of course if you can somehow logically abbreviate/shorten your organization name for example. Be careful with this, as it will affect resources (i.e. perform replacement) that are already deployed!
+
+6. Consider [trimming](#trimming).
+
+7. Roll your own naming for that specific resource. You may want to utilize some of the methods provided by [`@almamedia-open-source/cdk-project-context`](https://github.com/almamedia-open-source/cdk-project-context).
+
+### Trimming
+
+Set the maximum length and enable trimming:
+```ts
+Name.withProject(this, 'MyApplicationTargetGroup', {
+  maxLength: 32,
+  trim: true,
+});
+```
+
+If the output value of `Name.withProject` is within the `maxLength` (32) character limit, then it returns immediately. If not (as in the above example), the following happens:
+
+1. It creates a hash value from the basename:
+    `E43A285509B095FCE0E474A4E9DF0A1D1D41F09D91F70D6F4873688BC07E6C2B`
+2. Picks first 3 characters from the hash:
+    `E43`
+3. Cuts the output value of `Name.withProject` to first 29 characters:
+    `MyCoolProjectStagingMyApplica`
+4. Adds the first 3 characters from the hash as suffix
+    `MyCoolProjectStagingMyApplicaE43`
+
+Note that trimming happens for the whole output value of `Name.withProject`, which means your organization, project name and environment type prefixes might be affected as well (depending on their length).
+
+
+
+
+
+
