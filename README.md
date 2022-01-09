@@ -1,4 +1,4 @@
-# AWS CDK Resource Name
+# AWS CDK Project Resource Name
 
 ![CDK Version](https://img.shields.io/badge/CDK-v2-informational "CDK v2")
 ![Stability](https://img.shields.io/badge/Stability-Experimental-yellow "Stability: Experimental")
@@ -24,7 +24,7 @@ All `@almamedia-open-source/cdk-` prefixed constructs/utilities are based on exi
 
 _Breaking changes may occur at any given time without prior warning before first `v1` major is released_, as we rewrite them for CDK v2 and use this opportunity to also redesign & refactor.
 
-[Feedback](https://github.com/almamedia-open-source/cdk-resource-name/issues) is most welcome, but do note that we intend to implement these new constructs/utilities and their APIs in such manner that our existing CDK v1 production workloads can easily migrate into these new `@almamedia-open-source/cdk-` constructs/utilities.
+[Feedback](https://github.com/almamedia-open-source/cdk-project-resource-name/issues) is most welcome, but do note that we intend to implement these new constructs/utilities and their APIs in such manner that our existing CDK v1 production workloads can easily migrate into these new `@almamedia-open-source/cdk-` constructs/utilities.
 
 <br/>
 
@@ -41,7 +41,7 @@ _Breaking changes may occur at any given time without prior warning before first
 
 3. Install this tool:
     ```shell
-    npm i -D @almamedia-open-source/cdk-resource-name
+    npm i -D @almamedia-open-source/cdk-project-resource-name
     ```
 
 <br/>
@@ -80,7 +80,7 @@ _Breaking changes may occur at any given time without prior warning before first
 
 2. Define your resource names:
     ```ts
-    import { Name, UrlName, PathName } from '@almamedia-open-source/cdk-resource-name';
+    import { Name, UrlName, PathName } from '@almamedia-open-source/cdk-project-resource-name';
 
     // somewhere inside your CDK stack:
 
@@ -148,7 +148,7 @@ Since `withProject` is often the most sensible default, this tool exposes the fo
 Note the lowercase first letter.
 
 ```ts
-import { name, urlName, pathName } from '@almamedia-open-source/cdk-resource-name';
+import { name, urlName, pathName } from '@almamedia-open-source/cdk-project-resource-name';
 
 name(scope, 'MyResource');
 urlName(scope, 'MyResource');

@@ -1,9 +1,9 @@
 {
-  "name": "@almamedia-open-source/cdk-resource-name",
+  "name": "@almamedia-open-source/cdk-project-resource-name",
   "description": "Opinionated AWS CDK utility for explicitly naming resources.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/almamedia-open-source/cdk-resource-name.git"
+    "url": "https://github.com/almamedia-open-source/cdk-project-resource-name.git"
   },
   "scripts": {
     "build": "npx projen build",

@@ -9,9 +9,9 @@ const project = new AwsCdkConstructLibrary({
   authorName: 'Alma Media',
   authorOrganization: true,
   authorAddress: 'opensource@almamedia.dev',
-  name: '@almamedia-open-source/cdk-resource-name',
+  name: '@almamedia-open-source/cdk-project-resource-name',
   description: 'Opinionated AWS CDK utility for explicitly naming resources.',
-  repositoryUrl: 'https://github.com/almamedia-open-source/cdk-resource-name.git',
+  repositoryUrl: 'https://github.com/almamedia-open-source/cdk-project-resource-name.git',
   keywords: ['cdk', 'aws-cdk', 'awscdk', 'aws'],
 
   // Publish configuration

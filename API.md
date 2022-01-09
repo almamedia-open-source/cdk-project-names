@@ -3,12 +3,12 @@
 
 ## Structs <a name="Structs" id="structs"></a>
 
-### NameProps <a name="@almamedia-open-source/cdk-resource-name.NameProps" id="almamediaopensourcecdkresourcenamenameprops"></a>
+### NameProps <a name="@almamedia-open-source/cdk-project-resource-name.NameProps" id="almamediaopensourcecdkprojectresourcenamenameprops"></a>
 
 #### Initializer <a name="[object Object].Initializer" id="object-objectinitializer"></a>
 
 ```typescript
-import { NameProps } from '@almamedia-open-source/cdk-resource-name'
+import { NameProps } from '@almamedia-open-source/cdk-project-resource-name'
 
 const nameProps: NameProps = { ... }
 ```
@@ -17,12 +17,12 @@ const nameProps: NameProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| [`maxLength`](#almamediaopensourcecdkresourcenamenamepropspropertymaxlength) | `number` | *No description.* |
-| [`trim`](#almamediaopensourcecdkresourcenamenamepropspropertytrim) | `boolean` | *No description.* |
+| [`maxLength`](#almamediaopensourcecdkprojectresourcenamenamepropspropertymaxlength) | `number` | *No description.* |
+| [`trim`](#almamediaopensourcecdkprojectresourcenamenamepropspropertytrim) | `boolean` | *No description.* |
 
 ---
 
-##### `maxLength`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.NameProps.property.maxLength" id="almamediaopensourcecdkresourcenamenamepropspropertymaxlength"></a>
+##### `maxLength`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.NameProps.property.maxLength" id="almamediaopensourcecdkprojectresourcenamenamepropspropertymaxlength"></a>
 
 ```typescript
 public readonly maxLength: number;
@@ -32,7 +32,7 @@ public readonly maxLength: number;
 
 ---
 
-##### `trim`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.NameProps.property.trim" id="almamediaopensourcecdkresourcenamenamepropspropertytrim"></a>
+##### `trim`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.NameProps.property.trim" id="almamediaopensourcecdkprojectresourcenamenamepropspropertytrim"></a>
 
 ```typescript
 public readonly trim: boolean;
@@ -44,12 +44,12 @@ public readonly trim: boolean;
 
 ## Classes <a name="Classes" id="classes"></a>
 
-### Name <a name="@almamedia-open-source/cdk-resource-name.Name" id="almamediaopensourcecdkresourcenamename"></a>
+### Name <a name="@almamedia-open-source/cdk-project-resource-name.Name" id="almamediaopensourcecdkprojectresourcenamename"></a>
 
-#### Initializers <a name="@almamedia-open-source/cdk-resource-name.Name.Initializer" id="almamediaopensourcecdkresourcenamenameinitializer"></a>
+#### Initializers <a name="@almamedia-open-source/cdk-project-resource-name.Name.Initializer" id="almamediaopensourcecdkprojectresourcenamenameinitializer"></a>
 
 ```typescript
-import { Name } from '@almamedia-open-source/cdk-resource-name'
+import { Name } from '@almamedia-open-source/cdk-project-resource-name'
 
 new Name()
 ```
@@ -64,98 +64,98 @@ new Name()
 
 | **Name** | **Description** |
 | --- | --- |
-| [`globally`](#almamediaopensourcecdkresourcenamenameglobally) | *No description.* |
-| [`it`](#almamediaopensourcecdkresourcenamenameit) | *No description.* |
-| [`withProject`](#almamediaopensourcecdkresourcenamenamewithproject) | *No description.* |
+| [`globally`](#almamediaopensourcecdkprojectresourcenamenameglobally) | *No description.* |
+| [`it`](#almamediaopensourcecdkprojectresourcenamenameit) | *No description.* |
+| [`withProject`](#almamediaopensourcecdkprojectresourcenamenamewithproject) | *No description.* |
 
 ---
 
-##### `globally` <a name="@almamedia-open-source/cdk-resource-name.Name.globally" id="almamediaopensourcecdkresourcenamenameglobally"></a>
+##### `globally` <a name="@almamedia-open-source/cdk-project-resource-name.Name.globally" id="almamediaopensourcecdkprojectresourcenamenameglobally"></a>
 
 ```typescript
-import { Name } from '@almamedia-open-source/cdk-resource-name'
+import { Name } from '@almamedia-open-source/cdk-project-resource-name'
 
 Name.globally(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.scope" id="almamediaopensourcecdkresourcenamenameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.scope" id="almamediaopensourcecdkprojectresourcenamenameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkresourcenamenameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamenameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.props" id="almamediaopensourcecdkresourcenamenameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.props" id="almamediaopensourcecdkprojectresourcenamenameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `it` <a name="@almamedia-open-source/cdk-resource-name.Name.it" id="almamediaopensourcecdkresourcenamenameit"></a>
+##### `it` <a name="@almamedia-open-source/cdk-project-resource-name.Name.it" id="almamediaopensourcecdkprojectresourcenamenameit"></a>
 
 ```typescript
-import { Name } from '@almamedia-open-source/cdk-resource-name'
+import { Name } from '@almamedia-open-source/cdk-project-resource-name'
 
 Name.it(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.scope" id="almamediaopensourcecdkresourcenamenameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.scope" id="almamediaopensourcecdkprojectresourcenamenameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkresourcenamenameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamenameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.props" id="almamediaopensourcecdkresourcenamenameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.props" id="almamediaopensourcecdkprojectresourcenamenameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `withProject` <a name="@almamedia-open-source/cdk-resource-name.Name.withProject" id="almamediaopensourcecdkresourcenamenamewithproject"></a>
+##### `withProject` <a name="@almamedia-open-source/cdk-project-resource-name.Name.withProject" id="almamediaopensourcecdkprojectresourcenamenamewithproject"></a>
 
 ```typescript
-import { Name } from '@almamedia-open-source/cdk-resource-name'
+import { Name } from '@almamedia-open-source/cdk-project-resource-name'
 
 Name.withProject(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.scope" id="almamediaopensourcecdkresourcenamenameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.scope" id="almamediaopensourcecdkprojectresourcenamenameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkresourcenamenameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamenameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.Name.parameter.props" id="almamediaopensourcecdkresourcenamenameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.Name.parameter.props" id="almamediaopensourcecdkprojectresourcenamenameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
 
 
-### PathName <a name="@almamedia-open-source/cdk-resource-name.PathName" id="almamediaopensourcecdkresourcenamepathname"></a>
+### PathName <a name="@almamedia-open-source/cdk-project-resource-name.PathName" id="almamediaopensourcecdkprojectresourcenamepathname"></a>
 
-#### Initializers <a name="@almamedia-open-source/cdk-resource-name.PathName.Initializer" id="almamediaopensourcecdkresourcenamepathnameinitializer"></a>
+#### Initializers <a name="@almamedia-open-source/cdk-project-resource-name.PathName.Initializer" id="almamediaopensourcecdkprojectresourcenamepathnameinitializer"></a>
 
 ```typescript
-import { PathName } from '@almamedia-open-source/cdk-resource-name'
+import { PathName } from '@almamedia-open-source/cdk-project-resource-name'
 
 new PathName()
 ```
@@ -170,98 +170,98 @@ new PathName()
 
 | **Name** | **Description** |
 | --- | --- |
-| [`globally`](#almamediaopensourcecdkresourcenamepathnameglobally) | *No description.* |
-| [`it`](#almamediaopensourcecdkresourcenamepathnameit) | *No description.* |
-| [`withProject`](#almamediaopensourcecdkresourcenamepathnamewithproject) | *No description.* |
+| [`globally`](#almamediaopensourcecdkprojectresourcenamepathnameglobally) | *No description.* |
+| [`it`](#almamediaopensourcecdkprojectresourcenamepathnameit) | *No description.* |
+| [`withProject`](#almamediaopensourcecdkprojectresourcenamepathnamewithproject) | *No description.* |
 
 ---
 
-##### `globally` <a name="@almamedia-open-source/cdk-resource-name.PathName.globally" id="almamediaopensourcecdkresourcenamepathnameglobally"></a>
+##### `globally` <a name="@almamedia-open-source/cdk-project-resource-name.PathName.globally" id="almamediaopensourcecdkprojectresourcenamepathnameglobally"></a>
 
 ```typescript
-import { PathName } from '@almamedia-open-source/cdk-resource-name'
+import { PathName } from '@almamedia-open-source/cdk-project-resource-name'
 
 PathName.globally(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkresourcenamepathnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkprojectresourcenamepathnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkresourcenamepathnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamepathnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.props" id="almamediaopensourcecdkresourcenamepathnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.props" id="almamediaopensourcecdkprojectresourcenamepathnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `it` <a name="@almamedia-open-source/cdk-resource-name.PathName.it" id="almamediaopensourcecdkresourcenamepathnameit"></a>
+##### `it` <a name="@almamedia-open-source/cdk-project-resource-name.PathName.it" id="almamediaopensourcecdkprojectresourcenamepathnameit"></a>
 
 ```typescript
-import { PathName } from '@almamedia-open-source/cdk-resource-name'
+import { PathName } from '@almamedia-open-source/cdk-project-resource-name'
 
 PathName.it(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkresourcenamepathnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkprojectresourcenamepathnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkresourcenamepathnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamepathnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.props" id="almamediaopensourcecdkresourcenamepathnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.props" id="almamediaopensourcecdkprojectresourcenamepathnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `withProject` <a name="@almamedia-open-source/cdk-resource-name.PathName.withProject" id="almamediaopensourcecdkresourcenamepathnamewithproject"></a>
+##### `withProject` <a name="@almamedia-open-source/cdk-project-resource-name.PathName.withProject" id="almamediaopensourcecdkprojectresourcenamepathnamewithproject"></a>
 
 ```typescript
-import { PathName } from '@almamedia-open-source/cdk-resource-name'
+import { PathName } from '@almamedia-open-source/cdk-project-resource-name'
 
 PathName.withProject(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkresourcenamepathnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.scope" id="almamediaopensourcecdkprojectresourcenamepathnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkresourcenamepathnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenamepathnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.PathName.parameter.props" id="almamediaopensourcecdkresourcenamepathnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.PathName.parameter.props" id="almamediaopensourcecdkprojectresourcenamepathnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
 
 
-### UrlName <a name="@almamedia-open-source/cdk-resource-name.UrlName" id="almamediaopensourcecdkresourcenameurlname"></a>
+### UrlName <a name="@almamedia-open-source/cdk-project-resource-name.UrlName" id="almamediaopensourcecdkprojectresourcenameurlname"></a>
 
-#### Initializers <a name="@almamedia-open-source/cdk-resource-name.UrlName.Initializer" id="almamediaopensourcecdkresourcenameurlnameinitializer"></a>
+#### Initializers <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.Initializer" id="almamediaopensourcecdkprojectresourcenameurlnameinitializer"></a>
 
 ```typescript
-import { UrlName } from '@almamedia-open-source/cdk-resource-name'
+import { UrlName } from '@almamedia-open-source/cdk-project-resource-name'
 
 new UrlName()
 ```
@@ -276,87 +276,87 @@ new UrlName()
 
 | **Name** | **Description** |
 | --- | --- |
-| [`globally`](#almamediaopensourcecdkresourcenameurlnameglobally) | *No description.* |
-| [`it`](#almamediaopensourcecdkresourcenameurlnameit) | *No description.* |
-| [`withProject`](#almamediaopensourcecdkresourcenameurlnamewithproject) | *No description.* |
+| [`globally`](#almamediaopensourcecdkprojectresourcenameurlnameglobally) | *No description.* |
+| [`it`](#almamediaopensourcecdkprojectresourcenameurlnameit) | *No description.* |
+| [`withProject`](#almamediaopensourcecdkprojectresourcenameurlnamewithproject) | *No description.* |
 
 ---
 
-##### `globally` <a name="@almamedia-open-source/cdk-resource-name.UrlName.globally" id="almamediaopensourcecdkresourcenameurlnameglobally"></a>
+##### `globally` <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.globally" id="almamediaopensourcecdkprojectresourcenameurlnameglobally"></a>
 
 ```typescript
-import { UrlName } from '@almamedia-open-source/cdk-resource-name'
+import { UrlName } from '@almamedia-open-source/cdk-project-resource-name'
 
 UrlName.globally(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkresourcenameurlnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkprojectresourcenameurlnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkresourcenameurlnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenameurlnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkresourcenameurlnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkprojectresourcenameurlnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `it` <a name="@almamedia-open-source/cdk-resource-name.UrlName.it" id="almamediaopensourcecdkresourcenameurlnameit"></a>
+##### `it` <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.it" id="almamediaopensourcecdkprojectresourcenameurlnameit"></a>
 
 ```typescript
-import { UrlName } from '@almamedia-open-source/cdk-resource-name'
+import { UrlName } from '@almamedia-open-source/cdk-project-resource-name'
 
 UrlName.it(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkresourcenameurlnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkprojectresourcenameurlnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkresourcenameurlnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenameurlnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkresourcenameurlnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkprojectresourcenameurlnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
-##### `withProject` <a name="@almamedia-open-source/cdk-resource-name.UrlName.withProject" id="almamediaopensourcecdkresourcenameurlnamewithproject"></a>
+##### `withProject` <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.withProject" id="almamediaopensourcecdkprojectresourcenameurlnamewithproject"></a>
 
 ```typescript
-import { UrlName } from '@almamedia-open-source/cdk-resource-name'
+import { UrlName } from '@almamedia-open-source/cdk-project-resource-name'
 
 UrlName.withProject(scope: Construct, baseName: string, props?: NameProps)
 ```
 
-###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkresourcenameurlnameparameterscope"></a>
+###### `scope`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.scope" id="almamediaopensourcecdkprojectresourcenameurlnameparameterscope"></a>
 
 - *Type:* [`constructs.Construct`](#constructs.Construct)
 
 ---
 
-###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkresourcenameurlnameparameterbasename"></a>
+###### `baseName`<sup>Required</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.baseName" id="almamediaopensourcecdkprojectresourcenameurlnameparameterbasename"></a>
 
 - *Type:* `string`
 
 ---
 
-###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkresourcenameurlnameparameterprops"></a>
+###### `props`<sup>Optional</sup> <a name="@almamedia-open-source/cdk-project-resource-name.UrlName.parameter.props" id="almamediaopensourcecdkprojectresourcenameurlnameparameterprops"></a>
 
-- *Type:* [`@almamedia-open-source/cdk-resource-name.NameProps`](#@almamedia-open-source/cdk-resource-name.NameProps)
+- *Type:* [`@almamedia-open-source/cdk-project-resource-name.NameProps`](#@almamedia-open-source/cdk-project-resource-name.NameProps)
 
 ---
 
