@@ -126,8 +126,8 @@ _Breaking changes may occur at any given time without prior warning before first
 | Class name |                Style                |                              Purpose                               |      Example output       |
 | :--------- | :---------------------------------- | :----------------------------------------------------------------- | :------------------------ |
 | `Name`     | `PascalCase`                        | Default style for naming resources                                 | `MyResource`              |
-| `UrlName`  | `param-case`                        | URL/DNS compatible values (e.g. S3 `bucketName`)                   | `my-resource`             |
-| `PathName` | `PascalCase` separated by slash `/` | Slash separated values (e.g. SSM `parameterName` with hierarchies) | `MyNamespace/MyParameter` |
+| `UrlName`  | `param-case`                        | URL/DNS compatible values<br/>(e.g. S3 `bucketName`)                   | `my-resource`             |
+| `PathName` | `PascalCase` separated by slash `/` | Slash separated values<br/>(e.g. SSM `parameterName` with hierarchies) | `MyNamespace/MyParameter` |
 
 ### Specificity Levels
 
