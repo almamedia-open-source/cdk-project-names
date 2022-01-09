@@ -149,6 +149,10 @@ Note the lowercase first letter.
 
 ```ts
 import { name, urlName, pathName } from '@almamedia-open-source/cdk-resource-name';
+
+name(scope, 'MyResource');
+urlName(scope, 'MyResource');
+pathName(scope, 'MyResource');
 ```
 
 ### Prefixes
