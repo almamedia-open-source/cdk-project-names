@@ -1,6 +1,8 @@
 import { ProjectContext } from '@almamedia-open-source/cdk-project-context';
 import { pascalCase } from 'change-case';
 import { Construct } from 'constructs';
+import { NameProps } from './interfaces';
+import { validateMaxLength } from './max-length';
 
 interface ContextualNamingInformation {
   readonly environment?: string;
@@ -8,37 +10,36 @@ interface ContextualNamingInformation {
   readonly organizationName?: string;
 }
 
-/*
-interface NameProps {
-  maxLength?: number;
-  trim?: boolean;
-}
-*/
-
 export class Name {
 
-  public static it(scope: Construct, baseName: string): string {
+  public static it(scope: Construct, baseName: string, props?: NameProps): string {
     const info = this.getContextualInformation(scope);
-    return this.nameIt(baseName, {
+    const result = this.nameIt(baseName, {
       environment: info.environment,
     });
+    validateMaxLength(scope, result, props?.maxLength);
+    return result;
   }
 
-  public static withProject(scope: Construct, baseName: string): string {
+  public static withProject(scope: Construct, baseName: string, props?: NameProps): string {
     const info = this.getContextualInformation(scope);
-    return this.nameIt(baseName, {
+    const result = this.nameIt(baseName, {
       environment: info.environment,
       projectName: info.projectName,
     });
+    validateMaxLength(scope, result, props?.maxLength);
+    return result;
   }
 
-  public static globally(scope: Construct, baseName: string): string {
+  public static globally(scope: Construct, baseName: string, props?: NameProps): string {
     const info = this.getContextualInformation(scope);
-    return this.nameIt(baseName, {
+    const result = this.nameIt(baseName, {
       environment: info.environment,
       projectName: info.projectName,
       organizationName: info.organizationName,
     });
+    validateMaxLength(scope, result, props?.maxLength);
+    return result;
   }
 
   private static nameIt(baseName: string, info: ContextualNamingInformation): string {

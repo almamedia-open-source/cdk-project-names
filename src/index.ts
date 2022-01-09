@@ -2,6 +2,7 @@
 export { Name } from './name';
 export { UrlName } from './name-url';
 export { PathName } from './name-path';
+export { NameProps } from './interfaces';
 
 // Shorthand functions
 import { Name } from './name';
