@@ -3,6 +3,7 @@ import { pascalCase } from 'change-case';
 import { Construct } from 'constructs';
 import { NameProps } from './interfaces';
 import { validateMaxLength } from './max-length';
+import { trim } from './trim';
 
 interface ContextualNamingInformation {
   readonly environment?: string;
@@ -17,8 +18,9 @@ export class Name {
     const result = this.nameIt(baseName, {
       environment: info.environment,
     });
-    validateMaxLength(scope, result, props?.maxLength);
-    return result;
+    const trimmed = trim(result, baseName, props);
+    validateMaxLength(scope, trimmed, props?.maxLength);
+    return trimmed;
   }
 
   public static withProject(scope: Construct, baseName: string, props?: NameProps): string {
@@ -27,8 +29,9 @@ export class Name {
       environment: info.environment,
       projectName: info.projectName,
     });
-    validateMaxLength(scope, result, props?.maxLength);
-    return result;
+    const trimmed = trim(result, baseName, props);
+    validateMaxLength(scope, trimmed, props?.maxLength);
+    return trimmed;
   }
 
   public static globally(scope: Construct, baseName: string, props?: NameProps): string {
@@ -38,8 +41,9 @@ export class Name {
       projectName: info.projectName,
       organizationName: info.organizationName,
     });
-    validateMaxLength(scope, result, props?.maxLength);
-    return result;
+    const trimmed = trim(result, baseName, props);
+    validateMaxLength(scope, trimmed, props?.maxLength);
+    return trimmed;
   }
 
   private static nameIt(baseName: string, info: ContextualNamingInformation): string {
