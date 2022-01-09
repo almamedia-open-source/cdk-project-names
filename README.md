@@ -155,7 +155,7 @@ Depending on the configuration, CDK context and method that is being used, this 
 |   4   | Base Name               | Required string value given by user      |
 
 
-### Name Structure
+#### Name Structure
 
 | Style | Default | Application `environment` info present |
 | :--: | :--: | :--: |
