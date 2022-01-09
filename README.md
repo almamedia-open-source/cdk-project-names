@@ -171,8 +171,9 @@ Depending on the configuration, CDK context and method that is being used, this 
 
 | Style | Default | Application `environment` info present |
 | :--: | :--: | :--: |
- `PascalCase` default  | `[Organization][ProjectName]Basename` | `[Organization][ProjectName]EnvironmentBasename` |
- `param-case` URL/DNS compatible | `[organization-][project-name-]basename` |  `[organization-][project-name-]environment-basename` |
+| `PascalCase` default  | `[Organization][ProjectName]Basename` | `[Organization][ProjectName]EnvironmentBasename` |
+| `param-case` URL/DNS compatible | `[organization-][project-name-]basename` |  `[organization-][project-name-]environment-basename` |
+| `PascalCase` <br/>separated by `/`  | `/[Organization/][ProjectName/]Basename` | `/[Organization/][ProjectName/]Environment/Basename` |
 
 Values in square brackets `[]` are optional and they are printed depending on which [specificity level is used](#specificity-levels).
 
