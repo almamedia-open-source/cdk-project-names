@@ -1,6 +1,7 @@
 import { Project, ProjectProps } from '@almamedia-open-source/cdk-project-context';
 import * as cdk from 'aws-cdk-lib';
 //import { Construct } from 'constructs';
+import { pathName } from '../src';
 import { PathName } from '../src/name-path';
 
 const projectProps: ProjectProps = {
@@ -82,6 +83,23 @@ describe('PathName resources', () => {
     expect(PathName.globally(stack, 'foo bar')).toBe(expectedBase+'foobar');
     expect(PathName.globally(stack, 'foo.bar')).toBe(expectedBase+'foobar');
     expect(PathName.globally(stack, 'foo/bar')).toBe(expectedBase+'foo/bar');
+  });
+
+  test('shorthand method', () => {
+    const project = new Project({
+      ...projectProps,
+      context: {
+        environment: 'test',
+      },
+    });
+
+    const stack = new cdk.Stack(project, 'testing-stack');
+
+    const input = 'fooBar';
+    const expected = '/test/project/test/fooBar';
+    const explicit = PathName.withProject(stack, input);
+    expect(explicit).toBe(expected);
+    expect(pathName(stack, input)).toBe(expected);
   });
 
 });
