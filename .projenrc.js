@@ -16,7 +16,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   // Publish configuration
   defaultReleaseBranch: 'main',
-  //npmAccess: javascript.NpmAccess.PUBLIC,
+  npmAccess: javascript.NpmAccess.PUBLIC,
 
   // Dependencies
   minNodeVersion: nodejsVersion,
