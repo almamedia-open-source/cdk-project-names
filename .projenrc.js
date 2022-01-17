@@ -1,8 +1,8 @@
-const { AwsCdkConstructLibrary, TextFile, NpmAccess } = require('projen');
+const { awscdk, TextFile, javascript } = require('projen');
 
 const nodejsVersion = '14.17.6';
 
-const project = new AwsCdkConstructLibrary({
+const project = new awscdk.AwsCdkConstructLibrary({
 
   // Metadata
   stability: 'experimental',
@@ -16,14 +16,14 @@ const project = new AwsCdkConstructLibrary({
 
   // Publish configuration
   defaultReleaseBranch: 'main',
-  //npmAccess: NpmAccess.PUBLIC,
+  //npmAccess: javascript.NpmAccess.PUBLIC,
 
   // Dependencies
   minNodeVersion: nodejsVersion,
   cdkVersion: '2.0.0',
   constructsVersion: '10.0.0',
-  peerDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context'],
-  devDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context', '@types/change-case'],
+  peerDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context@v0.0.11'],
+  devDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context@v0.0.11'],
   bundledDeps: ['change-case'],
 
   // Gitignore
