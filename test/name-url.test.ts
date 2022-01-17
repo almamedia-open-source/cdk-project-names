@@ -1,6 +1,7 @@
 import { Project, ProjectProps } from '@almamedia-open-source/cdk-project-context';
 import * as cdk from 'aws-cdk-lib';
 //import { Construct } from 'constructs';
+import { urlName } from '../src';
 import { UrlName } from '../src/name-url';
 
 const projectProps: ProjectProps = {
@@ -78,6 +79,23 @@ describe('UrlName resources', () => {
     expect(UrlName.globally(stack, 'foo-bar')).toBe(expected);
     expect(UrlName.globally(stack, 'foo bar')).toBe(expected);
     expect(UrlName.globally(stack, 'foo.bar')).toBe(expected);
+  });
+
+  test('shorthand method', () => {
+    const project = new Project({
+      ...projectProps,
+      context: {
+        environment: 'test',
+      },
+    });
+
+    const stack = new cdk.Stack(project, 'testing-stack');
+
+    const input = 'fooBar';
+    const expected = 'test-project-test-foo-bar';
+    const explicit = UrlName.withProject(stack, input);
+    expect(explicit).toBe(expected);
+    expect(urlName(stack, input)).toBe(expected);
   });
 
 });
