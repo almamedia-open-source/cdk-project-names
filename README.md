@@ -1,7 +1,7 @@
 # ![Alma CDK Project Names](/assets/alma-cdk-project-names.png)
 
 ![CDK Version](https://img.shields.io/badge/CDK-v2-informational "CDK v2")
-![Stability](https://img.shields.io/badge/Stability-Experimental-yellow "Stability: Experimental")
+![Stability](https://img.shields.io/badge/Stability-Experimental-yellow "Stability: Experimental") [![release](https://github.com/almamedia-open-source/cdk-project-names/actions/workflows/release.yml/badge.svg)](https://github.com/almamedia-open-source/cdk-project-names/actions/workflows/release.yml)
 
 **Opinionated AWS CDK utility for explicitly naming resources.**
 
