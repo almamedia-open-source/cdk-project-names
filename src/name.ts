@@ -14,8 +14,8 @@ interface ContextualNamingInformation {
 export class Name {
 
   public static it(scope: Construct, baseName: string, props?: NameProps): string {
-    const info = this.getContextualInformation(scope);
-    const result = this.nameIt(baseName, {
+    const info = Name.getContextualInformation(scope);
+    const result = Name.nameIt(baseName, {
       environment: info.environment,
     });
     const trimmed = trim(result, baseName, props);
@@ -24,8 +24,8 @@ export class Name {
   }
 
   public static withProject(scope: Construct, baseName: string, props?: NameProps): string {
-    const info = this.getContextualInformation(scope);
-    const result = this.nameIt(baseName, {
+    const info = Name.getContextualInformation(scope);
+    const result = Name.nameIt(baseName, {
       environment: info.environment,
       projectName: info.projectName,
     });
@@ -35,8 +35,8 @@ export class Name {
   }
 
   public static globally(scope: Construct, baseName: string, props?: NameProps): string {
-    const info = this.getContextualInformation(scope);
-    const result = this.nameIt(baseName, {
+    const info = Name.getContextualInformation(scope);
+    const result = Name.nameIt(baseName, {
       environment: info.environment,
       projectName: info.projectName,
       organizationName: info.organizationName,
