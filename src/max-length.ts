@@ -1,7 +1,6 @@
 import { Annotations } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 
-
 export const MAX_LENGTH_DEFAULT = 63;
 export const MAX_LENGTH_PATH = 900;
 
@@ -22,6 +21,7 @@ export function isTooLong(value: string, maxLength?: number): boolean {
 
 export function validateMaxLength(scope: Construct, value: string, maxLength?: number): void {
   if (isTooLong(value, maxLength)) {
-    Annotations.of(scope).addError(`Name value "${value}" is longer than the allowed limit of ${maxLength}`);
+    Annotations.of(scope).addError(`Name value "${value}" is longer than the allowed limit of ${decideMaxLength(value, maxLength)} characters.`);
   }
 }
+

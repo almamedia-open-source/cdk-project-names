@@ -1,7 +1,10 @@
 import { Project, ProjectProps } from '@almamedia-open-source/cdk-project-context';
 import * as cdk from 'aws-cdk-lib';
+import * as assertions from 'aws-cdk-lib/assertions';
+import * as sqs from 'aws-cdk-lib/aws-sqs';
 //import { Construct } from 'constructs';
 import { name } from '../src';
+import { MAX_LENGTH_DEFAULT } from '../src/max-length';
 import { Name } from '../src/name';
 
 const projectProps: ProjectProps = {
@@ -96,4 +99,25 @@ describe('Name resources', () => {
     expect(name(stack, input)).toBe(expected);
   });
 
+  /**
+   * Test too long names
+   */
+  test('too long names should add annotation to node metadata', () => {
+    const project = new Project({
+      ...projectProps,
+      context: {
+        environment: 'test',
+      },
+    });
+
+    const tooLongStackName= 'a'.repeat(MAX_LENGTH_DEFAULT + 1);
+
+    const stack = new cdk.Stack(project, tooLongStackName);
+    const tooLongName = Name.withProject(stack, tooLongStackName);
+    new sqs.Queue(stack, 'Queue', {
+      queueName: tooLongName,
+    });
+
+    assertions.Annotations.fromStack(stack).hasError('*', `Name value "${tooLongName}" is longer than the allowed limit of ${MAX_LENGTH_DEFAULT} characters.`);
+  });
 });

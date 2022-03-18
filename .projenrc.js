@@ -20,7 +20,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
 
   // Dependencies
   minNodeVersion: nodejsVersion,
-  cdkVersion: '2.0.0',
+  cdkVersion: '2.17.0',
   constructsVersion: '10.0.0',
   peerDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context@v0.0.11'],
   devDeps: ['constructs', 'aws-cdk-lib', '@almamedia-open-source/cdk-project-context@v0.0.11'],
